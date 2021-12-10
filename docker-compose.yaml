@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+  transaction_isolation_pg:
+    image: postgres:13.4-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    command: ["postgres", "-c", "log_statement=all"]
